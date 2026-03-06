@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://kumteltechradar-code-wfrxaw-eb95f2-185-115-211-40.traefik.me/api',
+  baseURL: 'https://localhost:5000/api',
 });
 
 // Her istekte token varsa otomatik ekle
