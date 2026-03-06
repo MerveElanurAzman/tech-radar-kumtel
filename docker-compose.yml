@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   backend:
-    build: ./backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
     container_name: radar-backend
     restart: unless-stopped
     environment:
@@ -12,13 +14,11 @@ services:
       - ADMIN_PASSWORD=admin1234
     volumes:
       - sqlite-data:/app/db
-
     ports:
       - "8088:5000"
     networks:
       - radar-net
 
-  
 volumes:
   sqlite-data:
 
