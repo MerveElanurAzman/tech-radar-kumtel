@@ -12,20 +12,13 @@ services:
       - ADMIN_PASSWORD=admin1234
     volumes:
       - sqlite-data:/app/db
-    networks:
-      - radar-net
 
-  frontend:
-    build: ./frontend
-    container_name: radar-frontend
-    restart: unless-stopped
     ports:
-      - "8088:80"
-    depends_on:
-      - backend
+      - "8088:5000"
     networks:
       - radar-net
 
+  
 volumes:
   sqlite-data:
 
