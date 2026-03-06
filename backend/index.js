@@ -24,8 +24,8 @@ const PORT = process.env.PORT || 5000;
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // React Router için tüm rotaları index.html'e yönlendir
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+app.get('/{*path}', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend/dist', 'index.html'));
 });
 
 app.listen(PORT, () => {
